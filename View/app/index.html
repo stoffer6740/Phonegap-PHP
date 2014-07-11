@@ -8,20 +8,18 @@
 	<link href="css/style.css" rel="stylesheet" >
 </head>
 <body>
-
 <div class="container">
 	<div class="col-xs-12" id="test"><h1 style="text-align:center;">Contacts</h1></div>
 		<div class="col-xs-12">
 			<input type="button" class="button" value="Show all persons" onclick="GetAllPersons();">
 		</div>
-
 		<div class="col-xs-12" id="result"></div>
 
 		<div class="col-xs-12" id="HideThis" >
-			<input type="button" class="button" value="Insert person?" onclick="ShowForm();">
+			<input type="button" class="button" value="Insert person?" onclick="InsertPersonForm();">
 		</div> 
-		<div class="col-xs-12" id="ShowForm">
-			<form id="InsertUser" action='http://scripts.c-bjerregaard.dk/Controller/insertuser.php'>
+		<div class="col-xs-12" id="InsertPersonForm">
+			<form id="InsertPerson" action='http://scripts.c-bjerregaard.dk/Controller/insertperson.php'>
 				<input type='form' class="InsertPerson" placeholder='Firstname' id='firstname' name='firstname'>
 				<input type='form' class="InsertPerson" placeholder='Lastname' id='lastname' name='lastname'>
 				<input type='form' class="InsertPerson" placeholder='Address' id='address' name='address'>
@@ -43,7 +41,8 @@
 
 	<script type="text/javascript">
 		$(document).ready(function($) {
-			$('#ShowForm').hide();
+			$('#InsertPersonForm').hide();
+			GetAllPersons();
 		});
 	</script>
 	

@@ -8,17 +8,17 @@ function GetPerson(id) {
 		data: {p_id: id},
 	})
 	.done(function(data) {
-		console.log("success");
+		console.log("success GetPerson()");
 		$("#result").html(data);
 		
 	})
 	.fail(function() {
-		console.log("error");
+		console.log("error GetPerson()");
 		$("#result").html("There was an error");
 		
 	})
 	.always(function() {
-		console.log("complete");
+		console.log("complete GetPerson()");
 		
 	});
 	
@@ -32,18 +32,15 @@ function GetAllPersons() {
 		
 	})
 	.done(function(data) {
-		console.log("success");
+		console.log("success GetAllPersons()");
 		$("#result").html(data);
-		
 	})
 	.fail(function() {
-		console.log("error");
-		$("#result").html("There was an error");
-		
+		console.log("error GetAllPersons()");
+		alert("Error fetching persons");
 	})
 	.always(function() {
-		console.log("complete");
-		
+		console.log("complete GetAllPersons()");
 	});
 	
 }
@@ -55,19 +52,20 @@ function DeletePerson(id){
 		data: {p_id: id},
 	})
 	.done(function(data) {
-		console.log("success");
+		console.log("success DeletePerson()");
 		$("#result").html(data);
-		showAlert();
-		HideForm();	
+		alert("You successfully deleted " + GetPerson(id)['firstname']);
+		GetAllPersons();
 	})
 	.fail(function() {
-		console.log("error");
+		console.log("error DeletePerson()");
 		$("#result").html("There was an error");
+		alert("Error deleting person");
+		GetAllPersons();
 		
 	})
 	.always(function() {
-		console.log("complete");
-		
+		console.log("complete DeletePerson()");
 	});
 }
 
@@ -76,47 +74,40 @@ $('form').submit(function(e) {
 	var postData = $(this).serialize();
 
 	$.ajax({
-		url: 'http://scripts.c-bjerregaard.dk/Controller/insertuser.php',
+		url: 'http://scripts.c-bjerregaard.dk/Controller/insertperson.php',
 		type: 'POST',
 		data: postData,
 	})
 	.done(function(data) {
-		console.log("success");
-		//$("#result").html(data);
-		showAlert();
+		console.log("success Submitting data");
+		alert("You added " + $('#firstname').val() + " " + $('#lastname').val() + " to the database.");
 		HideForm();
+		GetAllPersons();
+
 		
 	})
 	.fail(function() {
-		console.log("error");
+		console.log("error Submitting data");
 		$("#result").html("There was an error");
-		alert('fail');
+		alert("Error adding person.");
+		HideForm();
 	})
 	.always(function() {
-		console.log("complete");
+		console.log("complete Submitting data");
 	});
 });
-
-function showAlert() {
-	navigator.notification.alert(
-            'You are the winner!',  // message
-            alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
-}
 	
 
 
 /* jQuery stuff. */
 
-function ShowForm() {
-	$('#ShowForm').show();
+function InsertPersonForm() {
+	$('#InsertPersonForm').show();
 	$('#HideThis').hide();
 }
 
 function HideForm() {
-	$('#ShowForm').hide();
+	$('#InsertPersonForm').hide();
 	$('#HideThis').show();
 	ClearFields();
 }

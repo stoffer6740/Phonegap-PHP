@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "com.cbjerregaard.phonegapjoomla"
         versionCode = "10" 
-        version     = "0.0.1" >
+        version     = "0.3.5" >
 
     <!-- versionCode is optional and Android only -->
 
@@ -24,7 +24,7 @@
     <!-- Permissions -->
     <preference name="permissions" value="none"/>
     <!-- add features to your permissions -->
-    <feature name="http://api.phonegap.com/1.0/notification"/>
+    <!--<feature name="http://api.phonegap.com/1.0/notification"/>-->
 
     <!-- defines what servers the app can fetch data from with ex. AJAX-->
 

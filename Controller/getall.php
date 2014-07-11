@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *'); 
 	include $_SERVER['DOCUMENT_ROOT'].'/Model/initDB.php';
 
 	echo "<table class='ajax_result'>
