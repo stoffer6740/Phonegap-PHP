@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+<title>Test</title>
+<head>
+	<script src="cordova.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/jquery.mobile-1.4.3.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" >
+</head>
+<body>
+
+<div class="container">
+	<div class="col-xs-12" id="test"><h1 style="text-align:center;">My Phonegap AJAX Application</h1></div>
+		<div class="col-xs-12">
+			<input type="button" class="click" value="Show all persons" onclick="GetAllPersons();">
+		</div>
+
+		<div class="col-xs-12" id="result"></div>
+
+		<div class="col-xs-12" id="HideThis" >
+			<input type="button" value="Insert person?" onclick="ShowForm();">
+		</div> 
+		<div class="col-xs-12" id="ShowForm">
+			<form id="InsertUser" action='http://scripts.c-bjerregaard.dk/Controller/insertuser.php'>
+				<input type='form' placeholder='Firstname' id='firstname' name='firstname'>
+				<input type='form' placeholder='Lastname' id='lastname' name='lastname'>
+				<input type='form' placeholder='Address' id='address' name='address'>
+				<input type='form' placeholder='Zipcode' id='zipcode' name='zipcode'>
+				<input type='form' placeholder='Phone' id='phone' name='phone'>
+				<input type='submit' value='Save'>
+			</form>	
+			
+		</div>
+
+
+
+	<script type="text/javascript" src="js/jQuery_1.11.1.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.3.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/fastclick.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function($) {
+			$('#ShowForm').hide();
+		});
+	</script>
+	
+	<script type="text/javascript">
+		window.addEventListener('load', function() {
+		    new FastClick(document.body);
+		}, false);
+	</script>
+</body>
+</html>

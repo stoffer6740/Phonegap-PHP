@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.cbjerregaard.phonegapjoomla"
+        versionCode = "10" 
+        version     = "0.0.1" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>PhoneGap PHP</name>
+
+    <description>
+        Testing phonegap and joomla.
+    </description>
+
+    <author href="www.c-bjerregaard.dk" email="contact@c-bjerregaard.dk">
+        Christoffer Bjerregaard
+    </author>
+
+    <!--<gap:platform name="ios" />
+        <gap:platform name="winphone" />-->
+    <gap:platform name="android" />
+
+    <!-- Permissions -->
+    <preference name="permissions" value="none"/>
+
+    <!-- defines what servers the app can fetch data from with ex. AJAX-->
+
+    <access origin="http://scripts.c-bjerregaard.dk/Controller/*" subdomains="true" />
+    <access origin="http://scripts.c-bjerregaard.dk/Content/*" subdomains="true" />
+
+
+</widget>

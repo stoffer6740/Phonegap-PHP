@@ -1,0 +1,46 @@
+body {
+	background-color: black;
+}
+
+.click {
+	width: 100%;
+}
+
+.container,
+.col-xs-12,
+.col-xs-11,
+.col-xs-10, 
+.col-xs-9, 
+.col-xs-8, 
+.col-xs-7, 
+.col-xs-6, 
+.col-xs-5, 
+.col-xs-4, 
+.col-xs-3, 
+.col-xs-2, 
+.col-xs-1 {
+	background-color: white;
+	padding: 5px;
+}
+
+.ajax_result {
+	width: 100%;
+}
+
+.ajax_result , tr , td , th {
+	padding: 5px;
+	margin: 5px 0px 5px 0px;
+	text-align: left;
+}
+
+	.ajax_result th {
+	background-color: #B8B8B8;
+	}
+
+	.ajax_result tr:nth-child(odd) {
+	background-color: #E8E8E8;
+	}
+
+	.ajax_result tr:nth-child(even) {
+	background-color: #F0F0F0;
+	}
