@@ -1,5 +1,4 @@
 <?php 
-header('Access-Control-Allow-Origin: *'); 
 	include $_SERVER['DOCUMENT_ROOT'].'/Model/initDB.php';
 
 	$_firstname = $_POST['firstname'];

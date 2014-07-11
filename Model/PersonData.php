@@ -43,7 +43,7 @@
 		}
 
 		public function DeletePerson($id) {
-			$query = $this->db->prepare("DELETE * FROM persons WHERE id='" . $id . "'");
+			$query = $this->db->prepare("DELETE FROM persons WHERE id='" . $id . "'");
 			$query->execute();
 		}
 

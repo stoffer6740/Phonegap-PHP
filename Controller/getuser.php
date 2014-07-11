@@ -9,7 +9,7 @@
 		  echo "<div class='col-xs-4'>Address</div>" . "<div class='col-xs-8'>" . $_person['address'] . "</div>";
 		  echo "<div class='col-xs-4'>Zipcode</div>" . "<div class='col-xs-8'>" . $_person['zipcode'] . "</div>";
 		  echo "<div class='col-xs-4'>Phone</div>" . "<div class='col-xs-8'>" . $_person['phone'] . "</div>";
-		  echo "<div class='col-xs-4'>Phone</div>" . "<div class='col-xs-8'><input type='button' value='Delete person' onclick='DeleteUser(" . $_person['id'] . ");'></input></div>";
+		  echo "<div class='col-xs-4'>Phone</div>" . "<div class='col-xs-8'><input type='button' value='Delete person' onclick='DeletePerson(" . $_person['id'] . ");'></input></div>";
 		  echo "</div>";
 		}
 		echo "</table>";

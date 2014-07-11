@@ -48,17 +48,16 @@ function GetAllPersons() {
 	
 }
 
-function DeleteUser(id){
+function DeletePerson(id){
 	$.ajax({
-		url: 'http://scripts.c-bjerregaard.dk/Controller/deleteuser.php',
+		url: 'http://scripts.c-bjerregaard.dk/Controller/deleteperson.php',
 		type: 'GET',
-		dataType: 'html',
 		data: {p_id: id},
 	})
 	.done(function(data) {
 		console.log("success");
 		$("#result").html(data);
-		
+		showAlert();		
 	})
 	.fail(function() {
 		console.log("error");
@@ -83,7 +82,7 @@ $('form').submit(function(e) {
 	.done(function(data) {
 		console.log("success");
 		//$("#result").html(data);
-		navigator.notification.alert('Person inserted', alertCallback, 'Success', 'Ok');
+		showAlert();
 		$('#InsertPerson')[0].reset();
 		
 	})
@@ -101,8 +100,13 @@ $('form').submit(function(e) {
 	});
 });
 
-function resetForm() {
-	$('#firstname').val("");
+function showAlert() {
+	navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
 }
 	
 

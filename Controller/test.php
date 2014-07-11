@@ -1,18 +1,8 @@
 <?php
+header('Access-Control-Allow-Origin: *'); 
 	include $_SERVER['DOCUMENT_ROOT'].'/Model/initDB.php';
 
-	$persons = $person->GetAllPersons();
-
-	foreach ($persons as $_person) {
-		echo "<p>" . $_person['id'] . " | " . $_person['firstname'] . "</p>";
-	}
-
-	$oneperson = $person->GetPerson(2);
-	echo "One _person with ID = 2";
-	foreach ($oneperson as $_person) {
-		echo "<p>" . $_person['id'] . " | " . $_person['firstname'] . "</p>";
-	}
-
+	$delete = $person->DeletePerson(94);
 	/* $person->DeleteAllPersons();
 
 	$insertperson = $person->InsertPerson("Christoffer", "Bjerregaard", "Uglvigvej 9", "6705", "31951115");
