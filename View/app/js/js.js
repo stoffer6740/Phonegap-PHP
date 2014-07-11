@@ -48,6 +48,29 @@ function GetAllPersons() {
 	
 }
 
+function DeleteUser(id){
+	$.ajax({
+		url: 'http://scripts.c-bjerregaard.dk/Controller/deleteuser.php',
+		type: 'GET',
+		dataType: 'html',
+		data: {p_id: id},
+	})
+	.done(function(data) {
+		console.log("success");
+		$("#result").html(data);
+		
+	})
+	.fail(function() {
+		console.log("error");
+		$("#result").html("There was an error");
+		
+	})
+	.always(function() {
+		console.log("complete");
+		
+	});
+}
+
 $('form').submit(function(e) {
 	e.preventDefault();
 	var postData = $(this).serialize();
