@@ -23,6 +23,8 @@
 
     <!-- Permissions -->
     <preference name="permissions" value="none"/>
+    <!-- add features to your permissions -->
+    <feature name="http://api.phonegap.com/1.0/notification"/>
 
     <!-- defines what servers the app can fetch data from with ex. AJAX-->
 

@@ -44,3 +44,34 @@ body {
 	.ajax_result tr:nth-child(even) {
 	background-color: #F0F0F0;
 	}
+
+.InsertPerson {
+	width: 100%;
+	padding: 6px;
+	margin: 2px 0 2px 0;
+	border-style: solid;
+	border-color: lightgray;
+	border-width: 1px;
+}
+
+.button {
+	width: 100%;
+	padding: 6px;
+	margin: 2px 0 2px 0;
+	border-style: solid;
+	border-color: lightblue;
+	border-width: 1px;
+	background-color: lightblue;
+	font-weight: bold;
+}
+
+	.button_50 {
+	width: 48%;
+	padding: 6px;
+	margin: 2px 0 2px 0;
+	border-style: solid;
+	border-color: lightblue;
+	border-width: 1px;
+	background-color: lightblue;
+	font-weight: bold;
+}

@@ -57,7 +57,8 @@ function DeletePerson(id){
 	.done(function(data) {
 		console.log("success");
 		$("#result").html(data);
-		showAlert();		
+		showAlert();
+		HideForm();	
 	})
 	.fail(function() {
 		console.log("error");
@@ -83,20 +84,16 @@ $('form').submit(function(e) {
 		console.log("success");
 		//$("#result").html(data);
 		showAlert();
-		$('#InsertPerson')[0].reset();
+		HideForm();
 		
 	})
 	.fail(function() {
 		console.log("error");
 		$("#result").html("There was an error");
 		alert('fail');
-		$('#InsertPerson')[0].reset();
-		
 	})
 	.always(function() {
 		console.log("complete");
-		$('#InsertPerson')[0].reset();
-		
 	});
 });
 
@@ -118,7 +115,16 @@ function ShowForm() {
 	$('#HideThis').hide();
 }
 
-function InsertPerson() {
+function HideForm() {
 	$('#ShowForm').hide();
 	$('#HideThis').show();
+	ClearFields();
+}
+
+function ClearFields(){
+	$('#firstname').val("");
+	$('#lastname').val("");
+	$('#address').val("");
+	$('#zipcode').val("");
+	$('#phone').val("");
 }

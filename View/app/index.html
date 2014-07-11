@@ -10,24 +10,25 @@
 <body>
 
 <div class="container">
-	<div class="col-xs-12" id="test"><h1 style="text-align:center;">My Phonegap AJAX Application</h1></div>
+	<div class="col-xs-12" id="test"><h1 style="text-align:center;">Contacts</h1></div>
 		<div class="col-xs-12">
-			<input type="button" class="click" value="Show all persons" onclick="GetAllPersons();">
+			<input type="button" class="button" value="Show all persons" onclick="GetAllPersons();">
 		</div>
 
 		<div class="col-xs-12" id="result"></div>
 
 		<div class="col-xs-12" id="HideThis" >
-			<input type="button" value="Insert person?" onclick="ShowForm();">
+			<input type="button" class="button" value="Insert person?" onclick="ShowForm();">
 		</div> 
 		<div class="col-xs-12" id="ShowForm">
 			<form id="InsertUser" action='http://scripts.c-bjerregaard.dk/Controller/insertuser.php'>
-				<input type='form' placeholder='Firstname' id='firstname' name='firstname'>
-				<input type='form' placeholder='Lastname' id='lastname' name='lastname'>
-				<input type='form' placeholder='Address' id='address' name='address'>
-				<input type='form' placeholder='Zipcode' id='zipcode' name='zipcode'>
-				<input type='form' placeholder='Phone' id='phone' name='phone'>
-				<input type='submit' value='Save'>
+				<input type='form' class="InsertPerson" placeholder='Firstname' id='firstname' name='firstname'>
+				<input type='form' class="InsertPerson" placeholder='Lastname' id='lastname' name='lastname'>
+				<input type='form' class="InsertPerson" placeholder='Address' id='address' name='address'>
+				<input type='form' class="InsertPerson" placeholder='Zipcode' id='zipcode' name='zipcode'>
+				<input type='form' class="InsertPerson" placeholder='Phone' id='phone' name='phone'>
+				<div class="col-xs-6"><input type='button' class="button" value="Cancel" onclick="HideForm();"></div>
+				<div class="col-xs-6"><input type='submit' class="button" value='Save'></div>
 			</form>	
 			
 		</div>
