@@ -52,6 +52,24 @@
 			$query->execute();
 		}
 
+		public function checkLogin($username, $password){
+			//$query = $this->db->prepare("SELECT * FROM user WHERE username = '" . $username . "' AND password = '" . $password . "'");
+			$query = $this->db->prepare("SELECT * FROM user WHERE username = 'test' AND password = '1234'");
+			$query->execute();
+
+			//return $query;
+
+			if (is_object($query) && $query->rowCount() == 1) {
+            	$response['success'] = true;
+            }
+		      else
+		      {
+		            $response['success'] = false;
+		      }
+		      echo json_encode($response);
+		      echo json_encode($query->rowCount());
+		}
+
 		function handle_sql_errors($query, $error_message)
 		{
 		    echo '<pre>';
